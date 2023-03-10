@@ -7,9 +7,9 @@ public class Product {
     private String nome;
     private String descrizione;
     private double prezzo;
-    private static double iva = 22;
+    private static final double iva = 22;
 
-    private static double ivaIndex = 1.2;
+    private static final double ivaIndex = 1.2;
 
     Random rand = new Random();
     public Product(){
