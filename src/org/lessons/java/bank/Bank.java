@@ -8,12 +8,32 @@ public class Bank {
 
         Scanner scan = new Scanner(System.in);
         Random rand = new Random();
+        boolean flag = true;
 
         System.out.println("inserisci il tuo nome");
         String username = scan.nextLine();
 
         BankAccount account = new BankAccount((rand.nextInt(1000)+1), username);
 
+        System.out.println("scrivi se vuoi: depositare, prelevare, uscire.");
+        String action = scan.nextLine();
+
+        while (flag) {
+            if (action.equalsIgnoreCase("depositare")) {
+                System.out.println("quanto vuoi depositare?");
+                double add = Double.parseDouble(scan.nextLine());
+                account.deposit(add);
+                System.out.println("saldo contabile: " + account.getBalance());
+            } else if (action.equalsIgnoreCase("prelevare")) {
+                System.out.println("quanto vuoi prelevare?");
+                double less = Double.parseDouble(scan.nextLine());
+                account.withdraw(less);
+                System.out.println("saldo contabile: " + account.getBalance());
+            } else if (action.equalsIgnoreCase("uscire")) {
+                flag = !flag;
+                System.out.println("uscito");
+            }
+        }
 
         System.out.println("SASSONE");
         scan.close();
