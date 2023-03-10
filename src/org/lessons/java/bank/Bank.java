@@ -15,10 +15,13 @@ public class Bank {
 
         BankAccount account = new BankAccount((rand.nextInt(1000)+1), username);
 
-        System.out.println("scrivi se vuoi: depositare, prelevare, uscire.");
-        String action = scan.nextLine();
+
 
         while (flag) {
+
+            System.out.println("scrivi se vuoi: depositare, prelevare, uscire.");
+            String action = scan.nextLine();
+
             if (action.equalsIgnoreCase("depositare")) {
                 System.out.println("quanto vuoi depositare?");
                 double add = Double.parseDouble(scan.nextLine());

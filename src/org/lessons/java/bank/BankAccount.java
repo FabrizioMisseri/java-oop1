@@ -1,5 +1,7 @@
 package org.lessons.java.bank;
 
+import java.text.DecimalFormat;
+
 public class BankAccount {
 //    - numero di conto
 //    - nome del proprietario
@@ -8,6 +10,9 @@ public class BankAccount {
     private int number;
     private String username;
     private double balance;
+
+    DecimalFormat d = new DecimalFormat("0.00$");
+
 
     public BankAccount(int number, String username){
         this.number = number;
@@ -29,8 +34,8 @@ public class BankAccount {
         this.username = username;
     }
 
-    public double getBalance() {
-        return balance;
+    public String getBalance() {
+        return d.format(balance);
     }
 
     @Override

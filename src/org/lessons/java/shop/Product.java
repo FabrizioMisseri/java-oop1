@@ -1,5 +1,6 @@
 package org.lessons.java.shop;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Product {
@@ -12,6 +13,8 @@ public class Product {
     private static final double ivaIndex = 1.2;
 
     Random rand = new Random();
+    DecimalFormat d = new DecimalFormat();
+
     public Product(){
         codice = rand.nextInt(100);
         nome = "unknown";
@@ -46,16 +49,16 @@ public class Product {
         this.descrizione = descrizione;
     }
 
-    public double getPrezzoBase() {
-        return prezzo;
+    public String getPrezzoBase() {
+        return d.format(prezzo);
     }
 
     public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
     }
 
-    public double getPrezzoIva() {
-        return (prezzo * ivaIndex);
+    public String getPrezzoIva() {
+        return d.format(prezzo * ivaIndex);
     }
 
     public static double getIva() {
