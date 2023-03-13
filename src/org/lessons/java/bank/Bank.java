@@ -35,6 +35,8 @@ public class Bank {
             } else if (action.equalsIgnoreCase("uscire")) {
                 flag = !flag;
                 System.out.println("uscito");
+            }else{
+                System.out.println("operazione non valida. Cosa vuoi fare?");
             }
         }
 
